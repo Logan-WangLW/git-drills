@@ -33,3 +33,20 @@ function jediName(firstName, lastName) {
 }
 
 console.log(jediName('Logan', 'Wang'));
+
+function beyond(num){
+    if (num===Infinity){
+        console.log("And beyond");
+    } else if (num > 0){
+        console.log("To infinity");
+    } else if (num < 0){
+        console.log("To negative infinity");
+    } else {
+        console.log("Staying home");
+    }
+}
+
+beyond(10);
+beyond(-50);
+beyond(0);
+beyond(Infinity);
