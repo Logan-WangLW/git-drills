@@ -118,3 +118,38 @@ try{
 } catch(e){
     console.error(e.message);
 }
+
+// 1 := Rock
+// 2 := Paper
+// 3 := Scissors
+function rockPaperScissors(playerHand) {
+  if (typeof playerHand !== 'number' || playerHand > 3 || playerHand < 1) {
+    throw new Error('Invalid arguments, need a number between 1 and 3');
+  }
+
+  const aiHand = Math.floor(Math.random() * 3) + 1;
+  console.log(`AI got a ${aiHand}`);
+
+  if (aiHand === playerHand) {
+    console.log('Tie game');
+    return;
+  }
+
+  if ((playerHand === 1 && aiHand === 3) 
+    || (playerHand === 2 && aiHand === 1)
+    || (playerHand === 3 && aiHand === 2)) {
+    console.log('You win!');
+    return;
+  }
+
+  console.log('You lose');
+}
+
+rockPaperScissors(1);
+rockPaperScissors(2);
+rockPaperScissors(3);
+try {
+  rockPaperScissors(200);
+} catch (e) {
+  console.error(e.message);
+}
