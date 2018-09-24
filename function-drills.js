@@ -25,3 +25,11 @@ try {
 } catch (e) {
   console.error(e.message);
 }
+
+function jediName(firstName, lastName) {
+  const firstJedi = firstName.slice(0, 2);
+  const lastJedi = lastName.slice(0, 3);
+  return `${lastJedi}${firstJedi}`;
+}
+
+console.log(jediName('Logan', 'Wang'));
