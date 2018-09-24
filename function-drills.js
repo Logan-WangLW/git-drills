@@ -50,3 +50,41 @@ beyond(10);
 beyond(-50);
 beyond(0);
 beyond(Infinity);
+
+function decodeWord(word) {
+  const firstLetter = word.charAt(0);
+  let characterNumber;
+  switch (firstLetter) {
+    case 'a': 
+      characterNumber = 2;
+      break;
+    case 'b': 
+      characterNumber = 3;
+      break;
+    case 'c':
+      characterNumber = 4;
+      break;
+    case 'd':
+      characterNumber = 5;
+      break;
+    default:
+      return ' ';
+  }
+
+  return word.charAt(characterNumber - 1);
+}
+
+function decode(sentence) {
+  const words = sentence.split(' ');
+  let decodedSentence = '';
+  for (let i = 0; i < words.length; i += 1) {
+    decodedSentence += decodeWord(words[i]);
+  }
+
+  return decodedSentence;
+}
+
+const actualDecoding = decode('craft block argon meter bells brown croon droop'); 
+const expectedDecoding = 'for loop';
+console.log(actualDecoding);
+console.log(expectedDecoding === actualDecoding);
