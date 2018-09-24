@@ -14,7 +14,8 @@ function createGreeting(name, age){
 }
 
 try {
-  const greeting1 = createGreeting("Arun", 31);
+  const greeting1 = createGreeting("Arun", -1);
   console.log(greeting1);
 } catch (e) {
+  console.log(e.message);
 }
