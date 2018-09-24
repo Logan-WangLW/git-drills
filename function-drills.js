@@ -88,3 +88,33 @@ const actualDecoding = decode('craft block argon meter bells brown croon droop')
 const expectedDecoding = 'for loop';
 console.log(actualDecoding);
 console.log(expectedDecoding === actualDecoding);
+
+function daysInMonth(month, leapYear = false){
+    switch(month){
+        case 'February':
+            return leapYear ? 29 : 28;
+        case 'January':
+        case 'March':
+        case 'May':
+        case 'July':
+        case 'August':
+        case 'October':
+        case 'December':
+            return 31;
+        case 'April':
+        case 'June':
+        case 'September':
+        case 'November':
+            return 30;
+        default: 
+            throw new Error("Must provide a valid month.");
+    }
+}
+
+try{
+    console.log(daysInMonth('February'));
+    console.log(daysInMonth('December'));
+    console.log(daysInMonth('Octber'));
+} catch(e){
+    console.error(e.message);
+}
